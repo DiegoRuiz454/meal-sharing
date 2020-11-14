@@ -28,7 +28,7 @@ router.get("/", async (request, response) => {
     // knex syntax for selecting things. Look up the documentation for knex for further info
     
     let output = await knex("meals").where(knex("meals.reservations INNER JOIN meals ON resrevartions.meal_id = meals.id ORDER BY reservations.id DESC;"));
-    if (request.query.maxPrice === 'true' ){ 
+    if (request.query.availableReservations === 'true' ){ 
    response.send(output)};
   } catch (error) {
     throw error;
